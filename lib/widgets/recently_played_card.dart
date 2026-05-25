@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-// This is the small horizontal card at the TOP of Spotify home
-// It shows a small image on left + title on right
 class RecentlyPlayedCard extends StatelessWidget {
   final String title;
   final String imageUrl;
@@ -22,24 +20,39 @@ class RecentlyPlayedCard extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: Row(
         children: [
-          // Small square image on the LEFT
-          Image.network(
-            imageUrl,
-            width: 48,
-            height: 48,
-            fit: BoxFit.cover,
-            errorBuilder: (context, error, stackTrace) {
-              return Container(
-                width: 48,
-                height: 48,
-                color: Color(0xFF333333),
-                child: Icon(Icons.music_note,
-                    color: Colors.grey, size: 20),
-              );
-            },
-          ),
+          // Check if local asset or network image
+          imageUrl.startsWith('assets/')
+              ? Image.asset(
+                  imageUrl,
+                  width: 48,
+                  height: 48,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Container(
+                      width: 48,
+                      height: 48,
+                      color: Color(0xFF333333),
+                      child: Icon(Icons.music_note,
+                          color: Colors.grey, size: 20),
+                    );
+                  },
+                )
+              : Image.network(
+                  imageUrl,
+                  width: 48,
+                  height: 48,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Container(
+                      width: 48,
+                      height: 48,
+                      color: Color(0xFF333333),
+                      child: Icon(Icons.music_note,
+                          color: Colors.grey, size: 20),
+                    );
+                  },
+                ),
           SizedBox(width: 10),
-          // Title on the RIGHT
           Expanded(
             child: Text(
               title,

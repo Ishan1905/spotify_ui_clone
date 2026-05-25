@@ -1,17 +1,31 @@
-# spotify_ui_clone
+# Spotify UI Clone
 
-A new Flutter project.
+A static Spotify-inspired music streaming app UI built using Flutter.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+* Modern Spotify-inspired interface
+* Home screen UI design
+* Music cards and playlist sections
+* Custom images and assets
+* Responsive Flutter layout
+* Clean and organized code structure
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies Used
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+* Flutter
+* Dart
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots
+
+* Home Screen
+* Playlist UI
+* Music Recommendation Cards
+
+## Project Purpose
+
+This project was created to practice Flutter UI development and improve frontend design skills using custom layouts and widgets.
+
+## Author
+
+Ishan Maurya

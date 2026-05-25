@@ -20,27 +20,30 @@ class AlbumCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Album Image
+          // Album Image - supports both local and network
           ClipRRect(
             borderRadius: BorderRadius.circular(6),
-            child: Image.network(
-              imageUrl,
-              width: 150,
-              height: 150,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) {
-                return Container(
-                  width: 150,
-                  height: 150,
-                  color: Color(0xFF333333),
-                  child: Icon(Icons.music_note,
-                      color: Colors.grey, size: 40),
-                );
-              },
-            ),
+            child: imageUrl.startsWith('assets/')
+                ? Image.asset(
+                    imageUrl,
+                    width: 150,
+                    height: 150,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) {
+                      return _placeholder();
+                    },
+                  )
+                : Image.network(
+                    imageUrl,
+                    width: 150,
+                    height: 150,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) {
+                      return _placeholder();
+                    },
+                  ),
           ),
           SizedBox(height: 8),
-          // Album Title
           Text(
             title,
             style: TextStyle(
@@ -51,7 +54,6 @@ class AlbumCard extends StatelessWidget {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
-          // Subtitle (optional)
           if (subtitle != null) ...[
             SizedBox(height: 2),
             Text(
@@ -66,6 +68,15 @@ class AlbumCard extends StatelessWidget {
           ],
         ],
       ),
+    );
+  }
+
+  Widget _placeholder() {
+    return Container(
+      width: 150,
+      height: 150,
+      color: Color(0xFF333333),
+      child: Icon(Icons.music_note, color: Colors.grey, size: 40),
     );
   }
 }

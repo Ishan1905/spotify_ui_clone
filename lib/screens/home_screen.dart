@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       'title': 'Yo Yo Honey Singh',
       'subtitle': 'Yo Yo Honey Singh, Himesh Reshammiya, Imran Khan',
-      'image': 'https://picsum.photos/seed/101/400',
+      'image': 'assets/images/yoyo.png',
       'color': '0xFFB5E853'
     },
     {
@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       'title': 'Guru Randhawa Mix',
       'subtitle': 'Yo Yo Honey Singh, Harrdy Sandhu and B Praak',
-      'image': 'https://picsum.photos/seed/104/400',
+      'image': 'assets/images/guru.png',
       'labelColor': '0xFFB5E853'
     },
     {
@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       'title': 'Pritam Mix',
       'subtitle': 'Kushagra Singh',
-      'image': 'https://picsum.photos/seed/106/400',
+      'image': ' https://picsum.photos/seed/106/400',
       'labelColor': '0xFF90D5FF'
     },
   ];
